@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  cursor: crosshair;
 }
 
 html,
@@ -10,4 +11,34 @@ body,
   height: 100%;
   width: 100%;
   background: black;
+}
+
+.crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  background: white;
+}
+
+.crosshair::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 12px;
+  height: 4px;
+  background: white;
+}
+
+.crosshair::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 4px;
+  height: 12px;
+  background: white;
 }

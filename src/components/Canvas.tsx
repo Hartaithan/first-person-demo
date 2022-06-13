@@ -6,7 +6,7 @@ const Canvas = () => {
   return (
     <FiberCanvas dpr={window.devicePixelRatio}>
       <ambientLight />
-      <mesh scale={1} position={[0, 0, 0]}>
+      <mesh scale={1} position={[0, 0, 0]} onClick={() => console.info("yooo")}>
         <boxGeometry args={[1, 1, 1]} />
         <meshBasicMaterial color="white" wireframe />
       </mesh>
