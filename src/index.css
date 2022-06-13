@@ -13,32 +13,32 @@ body,
   background: black;
 }
 
-.crosshair {
+#crosshair {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 4px;
-  height: 4px;
+  width: 2px;
+  height: 2px;
   background: white;
 }
 
-.crosshair::after {
+#crosshair::after {
   content: "";
   position: absolute;
   top: 0;
-  left: -4px;
-  width: 12px;
-  height: 4px;
+  left: -6px;
+  width: 14px;
+  height: 2px;
   background: white;
 }
 
-.crosshair::before {
+#crosshair::before {
   content: "";
   position: absolute;
-  top: -4px;
+  top: -6px;
   left: 0;
-  width: 4px;
-  height: 12px;
+  width: 2px;
+  height: 14px;
   background: white;
 }
