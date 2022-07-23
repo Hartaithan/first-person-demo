@@ -1,6 +1,6 @@
 import React from "react";
 
-const Crosshair = () => {
+const Crosshair: React.FC = () => {
   return <div id="crosshair" />;
 };
 

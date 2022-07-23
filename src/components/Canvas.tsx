@@ -1,15 +1,13 @@
 import React from "react";
 import { Canvas as FiberCanvas } from "@react-three/fiber";
 import { PointerLockControls } from "@react-three/drei";
+import Target from "./Target";
 
-const Canvas = () => {
+const Canvas: React.FC = () => {
   return (
     <FiberCanvas dpr={window.devicePixelRatio}>
       <ambientLight />
-      <mesh scale={1} position={[0, 0, 0]} onClick={() => console.info("yooo")}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshBasicMaterial color="white" wireframe />
-      </mesh>
+      <Target />
       {/* @ts-expect-error */}
       <PointerLockControls />
     </FiberCanvas>
