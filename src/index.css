@@ -3,6 +3,8 @@
   margin: 0;
   box-sizing: border-box;
   cursor: crosshair;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -41,4 +43,11 @@ body,
   width: 2px;
   height: 14px;
   background: white;
+}
+
+#total {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }

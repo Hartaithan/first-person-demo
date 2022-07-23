@@ -1,9 +1,11 @@
 import React from "react";
+import useStore from "../store";
 
 const randomNum = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min)) + min;
 
 const Target: React.FC = () => {
+  const { increment } = useStore();
   const [position, setPosition] = React.useState([0, 0, 0]);
 
   const getNewPosition = () => {
@@ -13,6 +15,7 @@ const Target: React.FC = () => {
   };
 
   const handleHit = () => {
+    increment();
     getNewPosition();
   };
 
