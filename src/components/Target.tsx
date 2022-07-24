@@ -21,13 +21,13 @@ const Target: React.FC = () => {
 
   return (
     <mesh
-      scale={0.5}
+      scale={0.3}
       position={position}
       rotation={[Math.PI / 2, 0, 0]}
       onClick={() => handleHit()}
     >
-      <cylinderGeometry args={[1, 1, 1, 16]} />
-      <meshBasicMaterial color="white" wireframe />
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshMatcapMaterial color="red" />
     </mesh>
   );
 };
