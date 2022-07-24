@@ -23,6 +23,7 @@ body,
   width: 2px;
   height: 2px;
   background: white;
+  z-index: 10;
 }
 
 #crosshair::after {
