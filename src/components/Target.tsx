@@ -1,4 +1,5 @@
 import React from "react";
+import { Vector3 } from "three";
 import useStore from "../store";
 
 const randomNum = (min: number, max: number) =>
@@ -6,12 +7,12 @@ const randomNum = (min: number, max: number) =>
 
 const Target: React.FC = () => {
   const { increment } = useStore();
-  const [position, setPosition] = React.useState([0, 0, 0]);
+  const [position, setPosition] = React.useState(new Vector3(0, 0, 0));
 
   const getNewPosition = () => {
     const x = randomNum(-3, 3);
     const y = randomNum(-3, 3);
-    setPosition([x, y, 0]);
+    setPosition(new Vector3(x, y, 0));
   };
 
   const handleHit = () => {

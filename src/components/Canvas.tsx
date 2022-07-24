@@ -8,7 +8,7 @@ const Canvas: React.FC = () => {
     <FiberCanvas dpr={window.devicePixelRatio}>
       <ambientLight />
       <Target />
-      {/* @ts-expect-error */}
+      {/* @ts-ignore:next-line */}
       <PointerLockControls />
     </FiberCanvas>
   );
