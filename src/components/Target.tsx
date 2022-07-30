@@ -7,7 +7,7 @@ const randomNum = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min)) + min;
 
 const Target: React.FC = () => {
-  const { increment } = useStore();
+  const { hit } = useStore();
   const [position, setPosition] = React.useState(new Vector3(0, 0, 1));
 
   const getNewPosition = () => {
@@ -17,7 +17,7 @@ const Target: React.FC = () => {
   };
 
   const handleHit = () => {
-    increment();
+    hit();
     getNewPosition();
   };
 

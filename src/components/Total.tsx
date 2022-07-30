@@ -4,11 +4,11 @@ import useStore from "../store";
 import font from "../fonts/helvetiker.json";
 
 const Total: React.FC = () => {
-  const count = useStore((state) => state.count);
+  const { shots, hits } = useStore((state) => state);
   return (
     <Center>
       <Text3D font={font as any} size={0.5} bevelEnabled bevelSize={0.02}>
-        {count}
+        {shots} {hits}
         <meshNormalMaterial />
       </Text3D>
     </Center>

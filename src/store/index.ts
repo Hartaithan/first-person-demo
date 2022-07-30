@@ -1,17 +1,19 @@
 import create from "zustand";
 
 interface IStore {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
+  shots: number;
+  hits: number;
+  shot: () => void;
+  hit: () => void;
   reset: () => void;
 }
 
 const useStore = create<IStore>((set) => ({
-  count: 0,
-  increment: () => set((state) => ({ count: state.count + 1 })),
-  decrement: () => set((state) => ({ count: state.count - 1 })),
-  reset: () => set(() => ({ count: 0 })),
+  shots: 0,
+  hits: 0,
+  shot: () => set((state) => ({ shots: state.shots + 1 })),
+  hit: () => set((state) => ({ hits: state.hits + 1 })),
+  reset: () => set(() => ({ shots: 0, hits: 0 })),
 }));
 
 export default useStore;
