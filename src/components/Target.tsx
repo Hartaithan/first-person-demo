@@ -1,3 +1,4 @@
+import { Sphere } from "@react-three/drei";
 import React from "react";
 import { Vector3 } from "three";
 import useStore from "../store";
@@ -21,15 +22,14 @@ const Target: React.FC = () => {
   };
 
   return (
-    <mesh
+    <Sphere
       scale={0.3}
       position={position}
-      rotation={[Math.PI / 2, 0, 0]}
       onClick={() => handleHit()}
+      args={[1, 32, 32]}
     >
-      <sphereGeometry args={[1, 32, 32]} />
       <meshMatcapMaterial color="red" />
-    </mesh>
+    </Sphere>
   );
 };
 
