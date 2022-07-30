@@ -2,15 +2,18 @@ import React from "react";
 import { Canvas as FiberCanvas } from "@react-three/fiber";
 import { PointerLockControls } from "@react-three/drei";
 import Target from "./Target";
+import Total from "./Total";
 
 const Canvas: React.FC = () => {
   return (
-    <FiberCanvas dpr={window.devicePixelRatio}>
-      <ambientLight />
-      <Target />
-      {/* @ts-ignore:next-line */}
-      <PointerLockControls />
-    </FiberCanvas>
+    <React.Suspense fallback={null}>
+      <FiberCanvas dpr={window.devicePixelRatio}>
+        <ambientLight />
+        <Target />
+        <Total />
+        <PointerLockControls />
+      </FiberCanvas>
+    </React.Suspense>
   );
 };
 
