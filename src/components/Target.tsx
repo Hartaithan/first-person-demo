@@ -8,7 +8,7 @@ const randomNum = (min: number, max: number) =>
 
 const Target: React.FC = () => {
   const { increment } = useStore();
-  const [position, setPosition] = React.useState(new Vector3(0, 0, 0));
+  const [position, setPosition] = React.useState(new Vector3(0, 0, 1));
 
   const getNewPosition = () => {
     const x = randomNum(-3, 3);
