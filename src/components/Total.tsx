@@ -5,7 +5,7 @@ import font from "../fonts/helvetiker.json";
 
 const Total: React.FC = () => {
   const { shots, hits } = useStore((state) => state);
-  const accuracy = ((hits * 100) / shots).toFixed(1);
+  const accuracy = (hits * 100) / shots;
   const textOptions = React.useMemo(() => {
     return {
       size: 0.3,
@@ -25,7 +25,7 @@ const Total: React.FC = () => {
         <meshNormalMaterial />
       </Text3D>
       <Text3D position={[0, -0.4, 0]} font={font as any} {...textOptions}>
-        Accuracy: {accuracy}%
+        Accuracy: {accuracy ? `${parseFloat(accuracy.toFixed(1))}%` : "100%"}
         <meshNormalMaterial />
       </Text3D>
     </Center>
