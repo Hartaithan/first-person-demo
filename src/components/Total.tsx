@@ -5,10 +5,27 @@ import font from "../fonts/helvetiker.json";
 
 const Total: React.FC = () => {
   const { shots, hits } = useStore((state) => state);
+  const accuracy = ((hits * 100) / shots).toFixed(1);
+  const textOptions = React.useMemo(() => {
+    return {
+      size: 0.3,
+      bevelEnabled: true,
+      bevelSize: 0.02,
+    };
+  }, []);
+
   return (
     <Center>
-      <Text3D font={font as any} size={0.5} bevelEnabled bevelSize={0.02}>
-        {shots} {hits}
+      <Text3D position={[0, 0.4, 0]} font={font as any} {...textOptions}>
+        Shots: {shots}
+        <meshNormalMaterial />
+      </Text3D>
+      <Text3D position={[0, 0, 0]} font={font as any} {...textOptions}>
+        Hits: {hits}
+        <meshNormalMaterial />
+      </Text3D>
+      <Text3D position={[0, -0.4, 0]} font={font as any} {...textOptions}>
+        Accuracy: {accuracy}%
         <meshNormalMaterial />
       </Text3D>
     </Center>
