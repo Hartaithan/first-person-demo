@@ -1,6 +1,7 @@
 import React from "react";
 import Canvas from "./components/Canvas";
 import Crosshair from "./components/Crosshair";
+import Overlay from "./components/Overlay";
 import useStore from "./store";
 
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
 
   return (
     <>
+      <Overlay />
       <Crosshair />
       <Canvas />
     </>
