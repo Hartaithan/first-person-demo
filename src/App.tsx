@@ -5,11 +5,12 @@ import Overlay from "./components/Overlay";
 import useStore from "./store";
 
 const App: React.FC = () => {
-  const { shot } = useStore();
+  const { shot, overlay } = useStore();
 
   const handleClick = React.useCallback(() => {
+    if (overlay) return;
     shot();
-  }, []); // eslint-disable-line
+  }, [overlay]); // eslint-disable-line
 
   React.useEffect(() => {
     window.addEventListener("click", handleClick);
