@@ -2,6 +2,9 @@
   "name": "first-person-demo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@react-three/cannon": "^6.3.0",
     "@react-three/drei": "^9.13.0",
